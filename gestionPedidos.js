@@ -5,24 +5,24 @@ const pedidos = [];
 function agregarPedido(cliente, producto, cantidad) {
     const pedido = {
         id: pedidos.length + 1,
-        cliente: cliente,
-        producto: producto,
-        cantidad: cantidad,
+        cliente,
+        producto,
+        cantidad,
         estado: "pendiente"
     };
     pedidos.push(pedido);
-    console.log("Pedido agregado:", pedido);
     mostrarResultado(`Pedido agregado: ${JSON.stringify(pedido)}`);
 }
 
 // Función para listar los pedidos
 function listarPedidos() {
-    console.log("Lista de pedidos:");
+    if (pedidos.length === 0) {
+        mostrarResultado("No hay pedidos.");
+        return;
+    }
     let resultado = "Lista de pedidos:\n";
-    pedidos.forEach(pedido => {
-        const detalle = `ID: ${pedido.id}, Cliente: ${pedido.cliente}, Producto: ${pedido.producto}, Cantidad: ${pedido.cantidad}, Estado: ${pedido.estado}`;
-        console.log(detalle);
-        resultado += detalle + "\n";
+    pedidos.forEach(p => {
+        resultado += `ID: ${p.id}, Cliente: ${p.cliente}, Producto: ${p.producto}, Cantidad: ${p.cantidad}, Estado: ${p.estado}\n`;
     });
     mostrarResultado(resultado);
 }
@@ -32,10 +32,8 @@ function actualizarEstadoPedido(id, nuevoEstado) {
     const pedido = pedidos.find(p => p.id === id);
     if (pedido) {
         pedido.estado = nuevoEstado;
-        console.log(`Estado del pedido ${id} actualizado a: ${nuevoEstado}`);
-        mostrarResultado(`Estado del pedido ${id} actualizado a: ${nuevoEstado}`);
+        mostrarResultado(`Pedido actualizado: ${JSON.stringify(pedido)}`);
     } else {
-        console.log(`Pedido con ID ${id} no encontrado.`);
         mostrarResultado(`Pedido con ID ${id} no encontrado.`);
     }
 }
@@ -44,17 +42,15 @@ function actualizarEstadoPedido(id, nuevoEstado) {
 function eliminarPedido(id) {
     const index = pedidos.findIndex(p => p.id === id);
     if (index !== -1) {
-        const pedidoEliminado = pedidos.splice(index, 1);
-        console.log(`Pedido eliminado:`, pedidoEliminado);
-        mostrarResultado(`Pedido eliminado: ${JSON.stringify(pedidoEliminado)}`);
+        const eliminado = pedidos.splice(index, 1);
+        mostrarResultado(`Pedido eliminado: ${JSON.stringify(eliminado[0])}`);
     } else {
-        console.log(`Pedido con ID ${id} no encontrado.`);
         mostrarResultado(`Pedido con ID ${id} no encontrado.`);
     }
 }
 
-// Función para mostrar resultados en el navegador
-function mostrarResultado(texto) {
+// Función para mostrar resultados en la página
+function mostrarResultado(mensaje) {
     const output = document.getElementById("output");
-    output.textContent = texto;
+    output.textContent = mensaje;
 }
