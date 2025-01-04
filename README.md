@@ -1,11 +1,17 @@
-# Bienvenidos a la colaboración en nuestro proyecto de Comercio Electrónico
-
-Damos la bienvenida a cualquier comentario y colaboración sobre el código de la actualización de la página web de una tienda de comercio electrónico. El objetivo de esta actualización es permitir a los usuarios buscar y filtrar productos, agregarlos a su carrito de compras y mejorar la experiencia general del usuario.
+actualización es permitir a los usuarios buscar y filt.rar productos, agregarlo>
 
 ## ¿Cómo puedes colaborar?
 
 - **Revisar el código**: Proporciona sugerencias para mejorar.
-- **Reportar problemas**: Usa el sistema de issues para reportar cualquier problema que encuentres.
-- **Proponer nuevas funcionalidades**: Crea un pull request para nuevas características o mejoras.
+- **Reportar problemas**: Usa el sistema de issues para reportar cualquier prob>
+- **Proponer nuevas funcionalidades**: Crea un pull request para nuevas caracte>
 
 ¡Gracias por tu interés y colaboración!
+=======
+# Actualización de la Página Web de la Tienda de Comercio Electrónico
+
+## Descripción
+Este proyecto consiste en la actualización de la página web de una tienda de co>
+
+## Características
+- **Búsqueda de productos**: Los usuarios pueden busca
